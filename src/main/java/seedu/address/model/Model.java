@@ -45,6 +45,21 @@ public interface Model {
     void setAddressBookFilePath(Path addressBookFilePath);
 
     /**
+     * Sets the user prefs' patients file path.
+     */
+    void setPatientsFilePath(Path patientsFilePath);
+
+    /**
+     * Sets the user prefs' doctors file path.
+     */
+    void setDoctorsFilePath(Path doctorsFilePath);
+
+    /**
+     * Sets the user prefs' schedule file path.
+     */
+    void setScheduleFilePath(Path scheduleFilePath);
+
+    /**
      * Replaces address book data with the data in {@code addressBook}.
      */
     void setAddressBook(ReadOnlyAddressBook addressBook);
