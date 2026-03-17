@@ -59,6 +59,21 @@ public class UserPrefs implements ReadOnlyUserPrefs {
         this.addressBookFilePath = addressBookFilePath;
     }
 
+    public void setPatientsFilePath(Path patientsFilePath) {
+        requireNonNull(patientsFilePath);
+        this.patientsFilePath = patientsFilePath;
+    }
+
+    public void setDoctorsFilePath(Path doctorsFilePath) {
+        requireNonNull(doctorsFilePath);
+        this.doctorsFilePath = doctorsFilePath;
+    }
+
+    public void setScheduleFilePath(Path scheduleFilePath) {
+        requireNonNull(scheduleFilePath);
+        this.scheduleFilePath = scheduleFilePath;
+    }
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {
