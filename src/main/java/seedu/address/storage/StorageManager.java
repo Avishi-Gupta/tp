@@ -11,6 +11,8 @@ import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.UserPrefs;
 
+import javax.xml.crypto.Data;
+
 /**
  * Manages storage of AddressBook data in local storage.
  */
@@ -26,12 +28,11 @@ public class StorageManager implements Storage {
     /**
      * Creates a {@code StorageManager} with the given {@code AddressBookStorage} and {@code UserPrefStorage}.
      */
-    public StorageManager(AddressBookStorage addressBookStorage,
-                          AddressBookStorage patientDataStorage,
+    public StorageManager(AddressBookStorage patientDataStorage,
                           AddressBookStorage doctorDataStorage,
                           AddressBookStorage scheduleDataStorage,
                           UserPrefsStorage userPrefsStorage) {
-        this.addressBookStorage = addressBookStorage;
+        // this.addressBookStorage = addressBookStorage;
         this.patientDataStorage = patientDataStorage;
         this.doctorDataStorage = doctorDataStorage;
         this.scheduleDataStorage = scheduleDataStorage;
@@ -81,6 +82,21 @@ public class StorageManager implements Storage {
     @Override
     public Optional<ReadOnlyAddressBook> readAddressBook() throws DataLoadingException {
         return readAddressBook(addressBookStorage.getAddressBookFilePath());
+    }
+
+    @Override
+    public Optional<ReadOnlyAddressBook> readPatientData() throws DataLoadingException {
+        return readAddressBook(patientDataStorage.getAddressBookFilePath());
+    }
+
+    @Override
+    public Optional<ReadOnlyAddressBook> readDoctorData() throws DataLoadingException {
+        return readAddressBook(doctorDataStorage.getAddressBookFilePath());
+    }
+
+    @Override
+    public Optional<ReadOnlyAddressBook> readScheduleData() throws DataLoadingException {
+        return readAddressBook(scheduleDataStorage.getAddressBookFilePath());
     }
 
     @Override
