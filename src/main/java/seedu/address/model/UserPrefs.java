@@ -54,6 +54,18 @@ public class UserPrefs implements ReadOnlyUserPrefs {
         return addressBookFilePath;
     }
 
+    public Path getPatientsFilePath() {
+        return patientsFilePath;
+    }
+
+    public Path getDoctorsFilePath() {
+        return doctorsFilePath;
+    }
+
+    public Path getScheduleFilePath() {
+        return scheduleFilePath;
+    }
+
     public void setAddressBookFilePath(Path addressBookFilePath) {
         requireNonNull(addressBookFilePath);
         this.addressBookFilePath = addressBookFilePath;

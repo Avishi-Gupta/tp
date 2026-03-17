@@ -70,6 +70,21 @@ public class ModelManager implements Model {
     }
 
     @Override
+    public Path getPatientsFilePath() {
+        return userPrefs.getPatientsFilePath();
+    }
+
+    @Override
+    public Path getDoctorsFilePath() {
+        return userPrefs.getDoctorsFilePath();
+    }
+
+    @Override
+    public Path getScheduleFilePath() {
+        return userPrefs.getScheduleFilePath();
+    }
+
+    @Override
     public void setAddressBookFilePath(Path addressBookFilePath) {
         requireNonNull(addressBookFilePath);
         userPrefs.setAddressBookFilePath(addressBookFilePath);

@@ -40,6 +40,21 @@ public interface Model {
     Path getAddressBookFilePath();
 
     /**
+     * Returns the user prefs' patients file path.
+     */
+    Path getPatientsFilePath();
+
+    /**
+     * Returns the user prefs' doctors file path.
+     */
+    Path getDoctorsFilePath();
+
+    /**
+     * Returns the user prefs' schedule file path.
+     */
+    Path getScheduleFilePath();
+
+    /**
      * Sets the user prefs' address book file path.
      */
     void setAddressBookFilePath(Path addressBookFilePath);
