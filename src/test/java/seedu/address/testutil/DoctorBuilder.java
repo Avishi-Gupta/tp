@@ -4,17 +4,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 import seedu.address.model.person.Address;
+import seedu.address.model.person.Doctor;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Name;
-import seedu.address.model.person.Patient;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
 /**
- * A utility class to help with building Patient objects.
+ * A utility class to help with building Doctor objects.
  */
-public class PatientBuilder {
+public class DoctorBuilder {
 
     public static final String DEFAULT_NAME = "Amy Bee";
     public static final String DEFAULT_PHONE = "85355255";
@@ -28,9 +28,9 @@ public class PatientBuilder {
     private Set<Tag> tags;
 
     /**
-     * Creates a {@code PersonBuilder} with the default details.
+     * Creates a {@code DoctorBuilder} with the default details.
      */
-    public PatientBuilder() {
+    public DoctorBuilder() {
         name = new Name(DEFAULT_NAME);
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
@@ -41,18 +41,18 @@ public class PatientBuilder {
     /**
      * Initializes the PersonBuilder with the data of {@code personToCopy}.
      */
-    public PatientBuilder(Patient patientToCopy) {
-        name = patientToCopy.getName();
-        phone = patientToCopy.getPhone();
-        email = patientToCopy.getEmail();
-        address = patientToCopy.getAddress();
-        tags = new HashSet<>(patientToCopy.getTags());
+    public DoctorBuilder(Doctor doctorToCopy) {
+        name = doctorToCopy.getName();
+        phone = doctorToCopy.getPhone();
+        email = doctorToCopy.getEmail();
+        address = doctorToCopy.getAddress();
+        tags = new HashSet<>(doctorToCopy.getTags());
     }
 
     /**
      * Sets the {@code Name} of the {@code Person} that we are building.
      */
-    public PatientBuilder withName(String name) {
+    public DoctorBuilder withName(String name) {
         this.name = new Name(name);
         return this;
     }
@@ -60,7 +60,7 @@ public class PatientBuilder {
     /**
      * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Person} that we are building.
      */
-    public PatientBuilder withTags(String ... tags) {
+    public DoctorBuilder withTags(String ... tags) {
         this.tags = SampleDataUtil.getTagSet(tags);
         return this;
     }
@@ -68,7 +68,7 @@ public class PatientBuilder {
     /**
      * Sets the {@code Address} of the {@code Person} that we are building.
      */
-    public PatientBuilder withAddress(String address) {
+    public DoctorBuilder withAddress(String address) {
         this.address = new Address(address);
         return this;
     }
@@ -76,7 +76,7 @@ public class PatientBuilder {
     /**
      * Sets the {@code Phone} of the {@code Person} that we are building.
      */
-    public PatientBuilder withPhone(String phone) {
+    public DoctorBuilder withPhone(String phone) {
         this.phone = new Phone(phone);
         return this;
     }
@@ -84,13 +84,13 @@ public class PatientBuilder {
     /**
      * Sets the {@code Email} of the {@code Person} that we are building.
      */
-    public PatientBuilder withEmail(String email) {
+    public DoctorBuilder withEmail(String email) {
         this.email = new Email(email);
         return this;
     }
 
-    public Patient build() {
-        return new Patient(name, phone, email, address, tags);
+    public Doctor build() {
+        return new Doctor(name, phone, email, address, tags);
     }
 
 }
